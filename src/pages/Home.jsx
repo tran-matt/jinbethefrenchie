@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import HeroSection from "../components/HeroSection";
 
-// Sample blog posts for the homepage preview
 const blogPosts = [
   {
     id: 1,
