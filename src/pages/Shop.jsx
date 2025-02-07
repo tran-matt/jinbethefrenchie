@@ -4,12 +4,10 @@ const Shop = () => {
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortBy, setSortBy] = useState("price-low"); // Default sorting option
+  const [sortBy, setSortBy] = useState("price-low");
 
-  // Define all categories upfront
   const categories = ["All", "Accessories", "Food", "Grooming", "Supplements", "Toys", "Other"];
 
-  // Fetch products from the JSON file dynamically
   useEffect(() => {
     fetch("/products.json")
       .then((response) => {
@@ -18,13 +16,10 @@ const Shop = () => {
         }
         return response.json();
       })
-      .then((data) => {
-        setProducts(data);
-      })
+      .then((data) => setProducts(data))
       .catch((error) => console.error("Error loading products:", error));
   }, []);
 
-  // Filter products based on category and search term
   const filteredProducts = products
     .filter(
       (product) =>
@@ -38,8 +33,18 @@ const Shop = () => {
       return 0;
     });
 
-  // Check if no products match the current filter
   const noProductsFound = filteredProducts.length === 0;
+
+  // Track product clicks with Google Analytics
+  const trackProductClick = (product) => {
+    if (window.gtag) {
+      window.gtag("event", "click", {
+        event_category: "Product",
+        event_label: product.name,
+        value: product.price,
+      });
+    }
+  };
 
   return (
     <div className="bg-amber-50 min-h-screen py-10">
@@ -48,9 +53,7 @@ const Shop = () => {
           🛍️ Shop Jinbe's Favorites
         </h1>
 
-        {/* Search, Category Filter, and Sort */}
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-6">
-          {/* Search Input */}
           <input
             type="text"
             placeholder="Search for products..."
@@ -58,8 +61,6 @@ const Shop = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
             className="p-2 border border-gray-300 rounded-md w-full md:w-1/3 text-gray-800"
           />
-
-          {/* Category Dropdown */}
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
@@ -71,8 +72,6 @@ const Shop = () => {
               </option>
             ))}
           </select>
-
-          {/* Sorting Dropdown */}
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
@@ -84,9 +83,7 @@ const Shop = () => {
           </select>
         </div>
 
-        {/* Product Grid */}
         {noProductsFound ? (
-          // No Products Found Message
           <div className="text-center mt-20">
             <h2 className="text-2xl font-bold text-stone-800 mb-4">
               Sorry, no products found in the "{selectedCategory}" category.
@@ -102,7 +99,7 @@ const Shop = () => {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProducts.map((product) => (
               <div
                 key={product.id}
@@ -120,6 +117,12 @@ const Shop = () => {
                   href={product.affiliateLink}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => {
+                    gtag('event', 'click', {
+                      event_category: 'Affiliate Link',
+                      event_label: product.name,
+                    });
+                  }}
                   className="bg-amber-700 text-white px-4 py-2 rounded font-bold hover:bg-amber-800 transition"
                 >
                   View on Amazon
@@ -127,6 +130,7 @@ const Shop = () => {
               </div>
             ))}
           </div>
+          
         )}
       </div>
     </div>
