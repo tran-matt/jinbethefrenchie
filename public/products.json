@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "name": "HIPPIH Dog Puzzle Toy 2 Pack",
+      "category": "Toys",
+      "image": "/images/toys/toy1.jpg",
+      "description": "Interactive dog toys for treat dispensing and slow feeding. Perfect for puppies and small dogs.",
+      "price": 8.99,
+      "popularity": 5,
+      "affiliateLink": "https://amzn.to/4aMLzbD"
+    },
+    {
+        "id": 2,
+        "name": "Royal Canin French Bulldog Puppy Dry Dog Food, 10.5 lb Bag",
+        "category": "Food",
+        "image": "/images/food/f1.jpg",
+        "description": "Formulated specifically for purebred French Bulldog puppies aged 8 weeks to 12 months. Supports immune system development, healthy skin, coat, and digestion.",
+        "price": 49.99,
+        "popularity": 5,
+        "affiliateLink": "https://amzn.to/4aTww00",
+        "ingredients": [
+          "Brewers rice", "chicken by-product meal", "wheat", "wheat gluten", "chicken fat", "natural flavors",
+          "dried plain beet pulp", "vegetable oil", "fish oil", "monocalcium phosphate", "sodium silico aluminate",
+          "potassium chloride", "calcium carbonate", "fructooligosaccharides", "salt", "sodium tripolyphosphate",
+          "vitamins (DL-alpha tocopherol acetate, niacin supplement, L-ascorbyl-2-polyphosphate, D-calcium pantothenate, biotin, pyridoxine hydrochloride, riboflavin supplement, thiamine mononitrate, vitamin A acetate, folic acid, vitamin B12 supplement, vitamin D3 supplement)",
+          "hydrolyzed yeast", "L-lysine", "choline chloride", "taurine", "glucosamine hydrochloride", "marigold extract",
+          "trace minerals (zinc proteinate, zinc oxide, manganese proteinate, ferrous sulfate, manganous oxide, copper sulfate, calcium iodate, sodium selenite, copper proteinate)",
+          "Yucca schidigera extract", "magnesium oxide", "L-carnitine", "chondroitin sulfate", "carotene", "rosemary extract",
+          "preserved with mixed tocopherols and citric acid"
+        ],
+        "details": [
+          "Formulated by Royal Canin for purebred French Bulldog puppies aged 8 weeks to 12 months.",
+          "Unique kibble shape tailored for easy pickup and chewing by French Bulldogs.",
+          "Fortified with an antioxidant complex, including vitamin E, to support immune system development.",
+          "Contains essential nutrients to reinforce the skin barrier for a healthy skin and coat.",
+          "Highly digestible proteins and precise fiber content help reduce gas and stool odor."
+        ]
+      },{
+        "id": 3,
+        "name": "Wags & Wiggles Cleanse Hypoallergenic Wipes 100ct",
+        "category": "Grooming",
+        "image": "/images/grooming/G1.jpg",
+        "description": "Fragrance-free hypoallergenic dog wipes for pets with sensitive skin. Perfect for waterless bathing and keeping your pet fresh on the go.",
+        "price": 9.99,
+        "popularity": 4,
+        "affiliateLink": "https://amzn.to/4aXGIEI",
+        "details": [
+          "Hypoallergenic wipes are ideal for dogs with sensitive skin, providing a thorough cleanse without irritation.",
+          "Fragrance-free formula ensures no additional irritation for sensitive pets.",
+          "Made with high-quality ingredients—free of SLS, DEA, and parabens, and safe for use with topical products.",
+          "100 wipes per package for long-lasting use.",
+          "Convenient and easy to use—perfect for keeping in your car or purse for on-the-go cleaning."
+        ]
+      }
+      
+  ]
+  
