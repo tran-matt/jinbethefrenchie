@@ -16,9 +16,14 @@ const Navbar = () => {
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between h-16">
-              {/* Logo */}
-              <div className="flex-shrink-0 flex items-center">
+            <div className="flex justify-between h-16 items-center">
+              {/* Logo and Title */}
+              <div className="flex-shrink-0 flex items-center space-x-2">
+                <img
+                  src="/logo.png" // Ensure the logo is in the `public/` folder
+                  alt="Logo"
+                  className="h-10 w-10 rounded-full"
+                />
                 <Link to="/" className="text-black font-bold text-xl">
                   Jinbe The Frenchie
                 </Link>
