@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const navigation = [
   { name: 'Home', to: '/' },
   { name: 'About', to: '/about' },
+  { name: 'Blog', to: '/blog' },      // Added Blog link
   { name: 'Contact', to: '/contact' },
 ];
 
@@ -15,7 +16,6 @@ const Navbar = () => {
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            {/* Flex container with justify-between to place logo on left and links on right */}
             <div className="relative flex h-16 items-center justify-between">
               {/* Mobile menu button */}
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
