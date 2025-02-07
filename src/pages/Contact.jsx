@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ const Contact = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,10 +21,29 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate form submission – replace this with your actual submission logic
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setFormData({ email: "", subject: "", message: "" });
+
+    // Prepare email template params
+    const templateParams = {
+      to_name: "Jinbe's World Team", // Update as needed
+      from_name: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    };
+
+    // Send email using EmailJS
+    emailjs
+      .send("service_ijqwlmq", "template_6g8ao7h", templateParams, "G14H9fwPnxP_m6bQ6")
+      .then(
+        () => {
+          setSubmitted(true);
+          setError(false);
+          setFormData({ email: "", subject: "", message: "" });
+        },
+        (err) => {
+          console.error("Failed to send email:", err);
+          setError(true);
+        }
+      );
   };
 
   return (
@@ -33,12 +54,18 @@ const Contact = () => {
           Contact Us
         </h2>
         <p className="mb-8 lg:mb-16 font-light text-center text-gray-700 sm:text-xl">
-        Have any questions or want to contact us? Let us know! We'd love to hear from you.
+          Have any questions or want to contact us? Let us know! We'd love to hear from you.
         </p>
 
         {submitted && (
           <p className="text-center text-green-600 mb-6">
             Thank you for your message! We'll get back to you soon.
+          </p>
+        )}
+
+        {error && (
+          <p className="text-center text-red-600 mb-6">
+            Oops! Something went wrong. Please try again.
           </p>
         )}
 
@@ -113,7 +140,7 @@ const Contact = () => {
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://instagram.com/jinbe"
+              href="https://instagram.com/jinbethefrenchie"
               target="_blank"
               rel="noopener noreferrer"
               className="block bg-[rgba(139,69,19,0.8)] p-4 rounded-lg shadow hover:bg-[rgba(139,69,19,1)] transition duration-300 text-white font-semibold"
@@ -121,7 +148,7 @@ const Contact = () => {
               Instagram
             </a>
             <a
-              href="https://tiktok.com/@jinbe"
+              href="https://tiktok.com/@jinbethefrenchie"
               target="_blank"
               rel="noopener noreferrer"
               className="block bg-[rgba(139,69,19,0.8)] p-4 rounded-lg shadow hover:bg-[rgba(139,69,19,1)] transition duration-300 text-white font-semibold"
@@ -129,7 +156,7 @@ const Contact = () => {
               TikTok
             </a>
             <a
-              href="mailto:jinbe@example.com"
+              href="mailto:jinbethefrenchie@gmail.com"
               className="block bg-[rgba(139,69,19,0.8)] p-4 rounded-lg shadow hover:bg-[rgba(139,69,19,1)] transition duration-300 text-white font-semibold"
             >
               Email
