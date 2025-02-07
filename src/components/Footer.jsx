@@ -1,5 +1,6 @@
 import React from "react";
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaInstagram, FaEnvelope } from "react-icons/fa";
+import { RiTiktokFill } from "react-icons/ri"; // Import TikTok icon from react-icons/ri
 
 const Footer = () => {
   return (
@@ -21,7 +22,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="text-white hover:text-amber-400 transition"
           >
-            <FaTiktok size={24} />
+            <RiTiktokFill size={24} />
           </a>
           <a
             href="mailto:jinbethefrenchie@gmail.com"
