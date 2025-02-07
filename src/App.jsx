@@ -7,6 +7,7 @@ import About from "./pages/About";
 import BlogPage from "./pages/BlogPage"; 
 import Contact from "./pages/Contact";
 import BlogPost from "./pages/BlogPost";
+import Shop from "./pages/Shop"; // ✅ Added Shop Page
 
 function App() {
   return (
@@ -17,10 +18,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            {/* Updated Blog route */}
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/shop" element={<Shop />} /> {/* ✅ Added Shop Route */}
           </Routes>
         </main>
         <Footer />

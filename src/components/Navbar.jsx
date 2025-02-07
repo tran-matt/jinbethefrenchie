@@ -7,6 +7,7 @@ const navigation = [
   { name: "Home", to: "/" },
   { name: "About", to: "/about" },
   { name: "Blog", to: "/blog" },
+  { name: "Shop", to: "/shop" }, // ✅ Added Shop Page to Navbar
   { name: "Contact", to: "/contact" },
 ];
 
