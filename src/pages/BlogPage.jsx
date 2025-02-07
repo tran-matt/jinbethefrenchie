@@ -126,7 +126,7 @@ const BlogPage = () => {
             placeholder="Search blogs..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full sm:w-1/2 p-2 border border-gray-300 rounded mb-4 sm:mb-0"
+            className="w-full sm:w-1/2 p-2 border border-gray-300 rounded mb-4 sm:mb-0 text-gray-900"
           />
           <select
             value={sortOption}
