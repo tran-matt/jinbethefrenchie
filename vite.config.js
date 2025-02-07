@@ -8,6 +8,9 @@ export default defineConfig({
   },
   build: {
     outDir: "build",
+    rollupOptions: {
+      external: [],
+    },
   },
 });
 
