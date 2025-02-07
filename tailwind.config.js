@@ -2,13 +2,13 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}", // Ensure all your component files are included
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
         navy: {
-          900: '#001f3f', // Dark navy blue
+          900: '#001f3f',
           800: '#003366',
           700: '#004080',
         },
@@ -37,20 +37,20 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'], // Default sans-serif
-        heading: ['Avenir', 'Helvetica', 'Arial', 'sans-serif'], // Custom for headings
+        sans: ['Calibri', 'system-ui', 'sans-serif'],
+        heading: ['Calibri', 'Helvetica', 'Arial', 'sans-serif'], 
       },
       spacing: {
-        128: '32rem', // Custom spacing
+        128: '32rem',
         144: '36rem',
       },
       screens: {
-        xs: '480px', // Add a custom breakpoint for small screens
+        xs: '480px',
       },
     },
   },
   plugins: [
     require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'), 
+    require('@tailwindcss/forms'),
   ],
 };

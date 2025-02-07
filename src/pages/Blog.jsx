@@ -1,54 +1,60 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
-  // Example blog data
   const blogPosts = [
     {
       id: 1,
-      title: "10 Tips for Frenchie Owners",
+      title: "10 Essential Tips for Frenchie Owners",
       excerpt:
-        "Owning a French Bulldog comes with its unique challenges. Learn how to keep your Frenchie happy and healthy with these top tips!",
-      date: "February 1, 2025",
+        "Discover key advice for caring for your French Bulldog—from diet and exercise to grooming and playtime.",
+      date: "March 10, 2025",
     },
     {
       id: 2,
-      title: "The Best Food for Your Frenchie",
+      title: "Creating the Perfect Diet for Your Frenchie",
       excerpt:
-        "French Bulldogs have specific dietary needs. Discover the best food options to keep your furry friend thriving!",
-      date: "January 25, 2025",
+        "Learn how to craft a balanced meal plan that caters to the unique nutritional needs of French Bulldogs.",
+      date: "February 25, 2025",
     },
     {
       id: 3,
-      title: "How to Train Your French Bulldog",
+      title: "Grooming and Care: A Comprehensive Guide",
       excerpt:
-        "Training your French Bulldog can be fun and rewarding. Learn some effective techniques for obedience training.",
-      date: "January 15, 2025",
+        "Everything you need to know about keeping your French Bulldog clean, comfortable, and happy.",
+      date: "February 15, 2025",
     },
   ];
 
   return (
-    <div className="container mx-auto p-8">
-      <h1 className="text-3xl font-bold text-center mb-6">Jinbe's Blog</h1>
-      <p className="text-center mb-10">
-        Explore helpful articles, tips, and stories for Frenchie lovers!
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {blogPosts.map((post) => (
-          <div
-            key={post.id}
-            className="bg-gray-100 p-6 rounded shadow-md hover:shadow-lg transition-shadow duration-300"
-          >
-            <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
-            <p className="text-gray-600 text-sm mb-4">{post.date}</p>
-            <p className="text-gray-700 mb-4">{post.excerpt}</p>
-            <a
-              href={`/blog/${post.id}`}
-              className="text-blue-500 font-bold hover:text-blue-600"
+    <div className="bg-amber-50 min-h-screen py-10">
+      <div className="container mx-auto px-4">
+        <h1 className="text-3xl font-bold text-center mb-6 text-stone-800">
+          Jinbe's Blog
+        </h1>
+        <p className="text-center mb-10 text-stone-700">
+          Explore helpful articles, tips, and stories for Frenchie lovers!
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {blogPosts.map((post) => (
+            <div
+              key={post.id}
+              className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300"
             >
-              Read More →
-            </a>
-          </div>
-        ))}
+              <h2 className="text-xl font-semibold mb-2 text-stone-800">
+                {post.title}
+              </h2>
+              <p className="text-stone-600 text-sm mb-4">{post.date}</p>
+              <p className="text-stone-700 mb-4">{post.excerpt}</p>
+              <Link
+                to={`/blog/${post.id}`}
+                className="text-amber-700 font-bold hover:underline"
+              >
+                Read More →
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

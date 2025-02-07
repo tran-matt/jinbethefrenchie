@@ -1,36 +1,38 @@
 import React from "react";
+import { FaInstagram, FaTiktok, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-900 text-white py-4">
-      <div className="container mx-auto text-center">
-        <h2 className="text-md font-bold mb-2 text-white">Jinbe The Frenchie</h2>
-        <div className="flex justify-center space-x-6 mb-2">
+    <footer className="bg-stone-800 text-white py-6">
+      <div className="container mx-auto flex flex-col items-center">
+        {/* Social Icons */}
+        <div className="flex space-x-6 mb-4">
           <a
-            href="https://instagram.com/jinbethefrenchie" 
+            href="https://instagram.com/jinbethefrenchie"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-gray-300 transition"
+            className="text-white hover:text-amber-400 transition"
           >
-            Instagram
+            <FaInstagram size={24} />
           </a>
           <a
-            href="https://tiktok.com/@jinbethefrenchie" 
+            href="https://tiktok.com/@jinbethefrenchie"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-gray-300 transition"
+            className="text-white hover:text-amber-400 transition"
           >
-            TikTok
+            <FaTiktok size={24} />
           </a>
           <a
-            href="mailto:jinbethefrenchie@gmail.com" 
-            className="text-white hover:text-gray-300 transition"
+            href="mailto:jinbethefrenchie@gmail.com"
+            className="text-white hover:text-amber-400 transition"
           >
-            Email
+            <FaEnvelope size={24} />
           </a>
         </div>
-        <div className="text-white-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} Jinbe The Frenchie. All rights reserved.</p>
+        {/* Copyright */}
+        <div className="text-sm text-gray-300">
+          <p>&copy; 2025 JinbeTheFrenchie. All rights reserved.</p>
         </div>
       </div>
     </footer>

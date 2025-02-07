@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Calibri, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -49,17 +49,17 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
   margin-bottom: 0.5em;
-  color: #1f2937; 
+  color: #1f2937;
 }
 
 h2 {
-  color: #1f2937; 
+  color: #1f2937;
 }
 
 p {
   margin: 0 0 1em;
   line-height: 1.6;
-  color: #ffffff; 
+  color: #ffffff;
 }
 
 button {
