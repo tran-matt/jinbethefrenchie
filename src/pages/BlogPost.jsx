@@ -11,13 +11,13 @@ const BlogPost = () => {
       title: "10 Essential Tips for Frenchie Owners",
       date: "March 10, 2025",
       content: (
-        <div>
-          <p className="mb-4">
+        <div className="prose prose-stone">
+          <p>
             French Bulldogs are known for their charming personalities—but they
             also have specific needs. Here are ten essential tips to help you
             become the best Frenchie owner:
           </p>
-          <ol className="list-decimal list-inside mb-4">
+          <ol className="list-decimal list-inside">
             <li>Schedule regular vet check-ups.</li>
             <li>Maintain a balanced diet rich in high-quality proteins.</li>
             <li>Ensure daily exercise to keep your Frenchie active.</li>
@@ -41,13 +41,13 @@ const BlogPost = () => {
       title: "Creating the Perfect Diet for Your Frenchie",
       date: "February 25, 2025",
       content: (
-        <div>
-          <p className="mb-4">
+        <div className="prose prose-stone">
+          <p>
             A well-planned diet is crucial for your French Bulldog’s overall
             well-being. This guide covers everything from selecting quality
             ingredients to establishing proper portion sizes.
           </p>
-          <ul className="list-disc list-inside mb-4">
+          <ul className="list-disc list-inside">
             <li>Consult your veterinarian for personalized dietary advice.</li>
             <li>Avoid fillers and artificial additives in commercial foods.</li>
             <li>Focus on lean proteins, fresh vegetables, and healthy fats.</li>
@@ -66,22 +66,22 @@ const BlogPost = () => {
       title: "Grooming and Care: A Comprehensive Guide",
       date: "February 15, 2025",
       content: (
-        <div>
-          <p className="mb-4">
+        <div className="prose prose-stone">
+          <p>
             Grooming your French Bulldog is not just about looking good—it’s a key
             part of maintaining their overall health. This comprehensive guide
             walks you through daily, weekly, and monthly grooming routines.
           </p>
-          <h4 className="font-semibold mb-2">Daily Care</h4>
-          <p className="mb-4">
+          <h4>Daily Care</h4>
+          <p>
             Brush your Frenchie daily to remove loose hair and distribute natural oils.
           </p>
-          <h4 className="font-semibold mb-2">Weekly Routine</h4>
-          <ul className="list-disc list-inside mb-4">
+          <h4>Weekly Routine</h4>
+          <ul className="list-disc list-inside">
             <li>Clean their ears and check for signs of infection.</li>
             <li>Trim nails as needed or schedule a professional grooming session.</li>
           </ul>
-          <h4 className="font-semibold mb-2">Monthly Maintenance</h4>
+          <h4>Monthly Maintenance</h4>
           <p>
             Bathe your Frenchie with a gentle shampoo and ensure they are dried thoroughly to prevent skin issues.
           </p>
@@ -92,15 +92,27 @@ const BlogPost = () => {
     blogPost = {
       title: "Blog Post Not Found",
       date: "",
-      content: "We couldn't find the blog post you're looking for.",
+      content: (
+        <p className="text-gray-700">
+          We couldn't find the blog post you're looking for.
+        </p>
+      ),
     };
   }
 
   return (
-    <div className="container mx-auto p-8 bg-amber-50 min-h-screen">
-      <h1 className="text-3xl font-bold mb-4 text-stone-800">{blogPost.title}</h1>
-      <p className="text-stone-600 text-sm mb-4">{blogPost.date}</p>
-      <div className="text-stone-700 leading-relaxed">{blogPost.content}</div>
+    <div className="flex justify-center items-center min-h-screen bg-amber-50">
+      <div className="bg-white shadow-lg rounded-lg p-6 md:p-10 w-full max-w-4xl">
+        <h1 className="text-4xl font-bold text-stone-800 mb-4 text-center">
+          {blogPost.title}
+        </h1>
+        {blogPost.date && (
+          <p className="text-stone-500 text-center text-sm mb-6">
+            Published on {blogPost.date}
+          </p>
+        )}
+        <div className="text-gray-700 leading-relaxed">{blogPost.content}</div>
+      </div>
     </div>
   );
 };

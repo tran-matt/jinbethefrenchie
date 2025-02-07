@@ -41,7 +41,7 @@ const Blog = () => {
               key={post.id}
               className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300"
             >
-              <h2 className="text-xl font-semibold mb-2 text-stone-800">
+              <h2 className="text-xl font-semibold mb-2 text-gray-800">
                 {post.title}
               </h2>
               <p className="text-stone-600 text-sm mb-4">{post.date}</p>
